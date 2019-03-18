@@ -9,11 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var ballpicIndex = 0
+    let ballImages = [
+        "ball1",
+        "ball2",
+        "ball3",
+        "ball4",
+        "ball5"
+    ]
+    
+    @IBOutlet weak var eightBallView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    
+    @IBAction func newBallViewButton(_ sender: Any) {
+    }
+    
 
 
 }
