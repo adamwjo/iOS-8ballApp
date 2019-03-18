@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var ballpicIndex = 0
+    var ballpicIndex: Int = 0
     let ballImages = [
         "ball1",
         "ball2",
@@ -24,10 +24,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        newBall()
     }
     
     
     @IBAction func newBallViewButton(_ sender: Any) {
+        newBall()
+    }
+    
+    func newBall() {
+        ballpicIndex = Int.random(in: 0...4)
+        eightBallView.image = UIImage(named: ballImages[ballpicIndex])
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        newBall()
     }
     
 
